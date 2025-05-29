@@ -1,0 +1,28 @@
+plugins {
+    id 'java-library'
+}
+
+allprojects {
+    group = 'com.ggar.cirrus.caf'
+    version = '0.0.1-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+
+    apply plugin: 'java-library'
+
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+
+    dependencies {
+
+    }
+
+    tasks.withType(Test) {
+        useJUnitPlatform()
+    }
+}

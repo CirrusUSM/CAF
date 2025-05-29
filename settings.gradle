@@ -1,0 +1,15 @@
+rootProject.name = 'caf'
+
+def blobstorageDir = new File(rootDir, '.')
+
+if (blobstorageDir.exists() && blobstorageDir.isDirectory()) {
+    blobstorageDir.eachDir { subDir ->
+        // Verifica si el subdirectorio contiene un archivo build.gradle,
+        // lo que indica que es un módulo de Gradle.
+        if (new File(subDir, 'build.gradle').exists() || new File(subDir, 'build.gradle.kts').exists()) {
+            // El nombre del proyecto para Gradle debe ser 'blobstorage:nombre-del-submodulo'
+            def projectName = ":${subDir.name}"
+            include projectName
+        }
+    }
+}
