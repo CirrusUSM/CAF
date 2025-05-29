@@ -13,3 +13,8 @@ if (blobstorageDir.exists() && blobstorageDir.isDirectory()) {
         }
     }
 }
+include 'fac-crypto-api'
+include 'fac-manifest-api'
+include 'fac-manifest-engine-core'
+include 'fac-group-management-api'
+include 'fac-manifest-persistence-api'

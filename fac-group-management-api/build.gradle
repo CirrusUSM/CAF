@@ -1,0 +1,5 @@
+dependencies {
+    api project(':fac-common')
+    api project(':fac-crypto-api')
+    api project(":fac-manifest-api")
+}

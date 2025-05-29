@@ -9,17 +9,21 @@ allprojects {
     repositories {
         mavenCentral()
     }
+
+    ext {
+        lombokVersion = '1.18.30'
+    }
 }
 
 subprojects {
-
     apply plugin: 'java-library'
 
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 
     dependencies {
-
+        compileOnly "org.projectlombok:lombok:$lombokVersion"
+        annotationProcessor "org.projectlombok:lombok:$lombokVersion"
     }
 
     tasks.withType(Test) {

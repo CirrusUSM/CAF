@@ -1,0 +1,4 @@
+dependencies {
+    api project(":fac-common")
+    api project(":fac-crypto-api")
+}
